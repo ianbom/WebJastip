@@ -1,4 +1,9 @@
+"use client";
+
 import { Clock, Layers, MessageSquare, Users } from "lucide-react";
+import { motion } from "motion/react";
+import { LUXURY_EASE } from "@/lib/motion";
+import { ScrollReveal } from "@/components/motion/reveal";
 
 export default function BenefitsSection() {
   const benefits = [
@@ -35,22 +40,49 @@ export default function BenefitsSection() {
   return (
     <section className="rz-sec bg-[#F7F7F7]">
       <div className="rz-container">
-        <div className="text-center max-w-xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <span className="text-[#C6A263] text-xs">◆</span>
-            <span className="rz-eyebrow !mb-0">WHY CHOOSE NURAYA</span>
+        <ScrollReveal direction="up" distance={14} duration={0.5}>
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <span className="text-[#C6A263] text-xs">◆</span>
+              <span className="rz-eyebrow !mb-0">WHY CHOOSE NURAYA</span>
+            </div>
+            <h2 className="rz-h text-2xl md:text-3xl lg:text-4xl">
+              Dedikasi Terbaik untuk Kenyamanan Ibadah Anda
+            </h2>
           </div>
-          <h2 className="rz-h text-2xl md:text-3xl lg:text-4xl">
-            Dedikasi Terbaik untuk Kenyamanan Ibadah Anda
-          </h2>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1, margin: "0px 0px -30px 0px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.07,
+                delayChildren: 0.04,
+              },
+            },
+          }}
+        >
           {benefits.map((b, idx) => {
             const Icon = b.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      ease: LUXURY_EASE,
+                    },
+                  },
+                }}
                 className="bg-white border border-[rgba(17,82,53,0.08)] p-6 flex flex-col justify-between group hover:border-[#C6A263] transition-colors relative"
               >
                 <div>
@@ -71,10 +103,10 @@ export default function BenefitsSection() {
                     {b.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

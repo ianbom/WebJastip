@@ -5,11 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MessageCircle, ShieldCheck, Truck, Check, ArrowLeft, Minus, Plus } from "lucide-react";
+import { motion } from "motion/react";
 import { PRODUCTS } from "@/data/products";
 import { formatSAR, formatIDR } from "@/lib/utils";
 import { SITE_CONFIG } from "@/config/site";
 import { createWhatsAppLink } from "@/lib/whatsapp";
 import ProductCard from "@/components/ui/ProductCard";
+import { LUXURY_EASE } from "@/lib/motion";
+import { ScrollReveal } from "@/components/motion/reveal";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -65,10 +68,24 @@ export default function ProductDetailPage({ params }: PageProps) {
     (p) => p.id !== product.id && p.categoryId === product.categoryId
   ).slice(0, 4);
 
+  const infoItemVariant = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: LUXURY_EASE },
+    },
+  };
+
   return (
     <div className="rz-container py-8 md:py-16">
       {/* Breadcrumb */}
-      <div className="mb-8">
+      <motion.div
+        className="mb-8"
+        initial={{ opacity: 0, x: -8 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, ease: LUXURY_EASE }}
+      >
         <Link
           href="/katalog"
           className="inline-flex items-center gap-2 text-[0.72rem] tracking-[0.18em] uppercase text-[rgba(28,26,23,0.6)] hover:text-[#115235] transition-colors"
@@ -76,19 +93,24 @@ export default function ProductDetailPage({ params }: PageProps) {
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Kembali ke Katalog</span>
         </Link>
-      </div>
+      </motion.div>
 
       {/* Main Detail Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
-        {/* Left: Gallery (5 cols) */}
-        <div className="lg:col-span-6 space-y-4">
+        {/* Left: Gallery (6 cols) */}
+        <motion.div
+          className="lg:col-span-6 space-y-4"
+          initial={{ opacity: 0, scale: 0.985 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: LUXURY_EASE }}
+        >
           <div className="relative aspect-[4/5] bg-[#EFE9DE] overflow-hidden border border-[rgba(17,82,53,0.08)]">
             <Image
               src={product.images[selectedImage] || product.images[0]}
               alt={product.name}
               fill
               priority
-              className="object-cover"
+              className="object-cover transition-opacity duration-300"
             />
           </div>
 
@@ -101,7 +123,7 @@ export default function ProductDetailPage({ params }: PageProps) {
                   onClick={() => setSelectedImage(idx)}
                   className={`relative w-20 aspect-[4/5] border transition-all ${
                     selectedImage === idx
-                      ? "border-[#115235] opacity-100"
+                      ? "border-[#115235] opacity-100 ring-1 ring-[#115235]"
                       : "border-transparent opacity-60 hover:opacity-100"
                   }`}
                 >
@@ -115,22 +137,38 @@ export default function ProductDetailPage({ params }: PageProps) {
               ))}
             </div>
           )}
-        </div>
+        </motion.div>
 
-        {/* Right: Info & Ordering (7 cols) */}
+        {/* Right: Info & Ordering (6 cols) */}
         <div className="lg:col-span-6 flex flex-col justify-between">
-          <div className="space-y-6">
-            <div>
+          <motion.div
+            className="space-y-6"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.05,
+                  delayChildren: 0.05,
+                },
+              },
+            }}
+          >
+            <motion.div variants={infoItemVariant}>
               <span className="rz-eyebrow text-[#AC9878]">
                 {product.categoryName} {product.subLabel ? `— ${product.subLabel}` : ""}
               </span>
               <h1 className="font-serif text-3xl md:text-4xl text-[#115235] font-medium leading-tight">
                 {product.name}
               </h1>
-            </div>
+            </motion.div>
 
             {/* Price Box */}
-            <div className="p-4 bg-white border border-[rgba(17,82,53,0.1)]">
+            <motion.div
+              variants={infoItemVariant}
+              className="p-4 bg-white border border-[rgba(17,82,53,0.1)]"
+            >
               <div className="flex items-baseline gap-3">
                 <span className="font-serif text-3xl font-medium text-[#115235]">
                   {formatSAR(currentPriceSar)}
@@ -146,16 +184,19 @@ export default function ProductDetailPage({ params }: PageProps) {
                   Estimasi Rupiah: ~{formatIDR(priceIdr)} / item
                 </span>
               )}
-            </div>
+            </motion.div>
 
             {/* Short Description */}
-            <p className="text-sm md:text-base text-[rgba(28,26,23,0.8)] leading-relaxed">
+            <motion.p
+              variants={infoItemVariant}
+              className="text-sm md:text-base text-[rgba(28,26,23,0.8)] leading-relaxed"
+            >
               {product.fullDescription || product.description}
-            </p>
+            </motion.p>
 
             {/* Highlights */}
             {product.highlights && product.highlights.length > 0 && (
-              <div className="space-y-2 pt-2">
+              <motion.div variants={infoItemVariant} className="space-y-2 pt-2">
                 <span className="text-[0.72rem] tracking-[0.16em] uppercase text-[#AC9878] font-medium block">
                   Keunggulan Produk:
                 </span>
@@ -167,12 +208,15 @@ export default function ProductDetailPage({ params }: PageProps) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             )}
 
             {/* Variants Selector */}
             {product.variants && product.variants.length > 0 && (
-              <div className="space-y-3 pt-3 border-t border-[rgba(17,82,53,0.1)]">
+              <motion.div
+                variants={infoItemVariant}
+                className="space-y-3 pt-3 border-t border-[rgba(17,82,53,0.1)]"
+              >
                 <label className="text-[0.72rem] tracking-[0.16em] uppercase text-[rgba(28,26,23,0.7)] font-medium block">
                   Pilihan Varian:
                 </label>
@@ -195,11 +239,14 @@ export default function ProductDetailPage({ params }: PageProps) {
                     </button>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             )}
 
             {/* Quantity Selector & Summary */}
-            <div className="space-y-3 pt-3 border-t border-[rgba(17,82,53,0.1)]">
+            <motion.div
+              variants={infoItemVariant}
+              className="space-y-3 pt-3 border-t border-[rgba(17,82,53,0.1)]"
+            >
               <label className="text-[0.72rem] tracking-[0.16em] uppercase text-[rgba(28,26,23,0.7)] font-medium block">
                 Jumlah Pesanan:
               </label>
@@ -239,10 +286,10 @@ export default function ProductDetailPage({ params }: PageProps) {
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
 
             {/* WhatsApp CTA Action */}
-            <div className="pt-4 space-y-3">
+            <motion.div variants={infoItemVariant} className="pt-4 space-y-3">
               <a
                 href={waOrderUrl}
                 target="_blank"
@@ -263,28 +310,56 @@ export default function ProductDetailPage({ params }: PageProps) {
                   Amanah & Terpercaya
                 </span>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
       {/* Related Products Section */}
       {relatedProducts.length > 0 && (
         <div className="mt-20 pt-12 border-t border-[rgba(17,82,53,0.1)]">
-          <div className="rz-head">
-            <div>
-              <span className="rz-eyebrow">REKOMENDASI LAINNYA</span>
-              <h2 className="rz-h text-2xl md:text-3xl">Pilihan Terkait</h2>
+          <ScrollReveal direction="up" distance={16} duration={0.55}>
+            <div className="rz-head">
+              <div>
+                <span className="rz-eyebrow">REKOMENDASI LAINNYA</span>
+                <h2 className="rz-h text-2xl md:text-3xl">Pilihan Terkait</h2>
+              </div>
+              <Link href="/katalog" className="rz-link">
+                Lihat Semua
+              </Link>
             </div>
-            <Link href="/katalog" className="rz-link">
-              Lihat Semua
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          </ScrollReveal>
+
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.08, margin: "0px 0px -30px 0px" }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.06,
+                },
+              },
+            }}
+          >
             {relatedProducts.map((p) => (
-              <ProductCard key={p.id} product={p} />
+              <motion.div
+                key={p.id}
+                variants={{
+                  hidden: { opacity: 0, y: 14 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5, ease: LUXURY_EASE },
+                  },
+                }}
+              >
+                <ProductCard product={p} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       )}
     </div>

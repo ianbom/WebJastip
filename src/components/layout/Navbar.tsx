@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Menu, MessageCircle, Search, X } from "lucide-react";
+import { motion } from "motion/react";
 import { createWhatsAppLink } from "@/lib/whatsapp";
 import { SITE_CONFIG } from "@/config/site";
+import { LUXURY_EASE } from "@/lib/motion";
 
 const navLinks = [
   { label: "Beranda", href: "/" },
@@ -45,7 +47,12 @@ export default function Navbar() {
   return (
     <>
       <a className="skip-link" href="#main-content">Langsung ke konten</a>
-      <div className="site-announcement">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className="site-announcement"
+      >
         <div className="rz-container site-announcement__inner">
           <p>Menemani kebutuhan jamaah di Madinah<span> · Antar ke lobi hotel</span></p>
           <a href={waLink} target="_blank" rel="noopener noreferrer">
@@ -53,7 +60,7 @@ export default function Navbar() {
             <span>{SITE_CONFIG.whatsappDisplay}</span>
           </a>
         </div>
-      </div>
+      </motion.div>
 
       <header className="site-header">
         <div className="rz-container site-header__inner">
@@ -73,24 +80,63 @@ export default function Navbar() {
             >
               <Menu size={22} strokeWidth={1.5} aria-hidden="true" />
             </button>
-            <nav className="site-desktop-nav" aria-label="Navigasi utama">
-              {navLinks.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
-            </nav>
+            <motion.nav
+              className="site-desktop-nav"
+              aria-label="Navigasi utama"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.04,
+                    delayChildren: 0.08,
+                  },
+                },
+              }}
+            >
+              {navLinks.map((item) => (
+                <motion.div
+                  key={item.href}
+                  variants={{
+                    hidden: { opacity: 0, y: -8 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.45, ease: LUXURY_EASE },
+                    },
+                  }}
+                >
+                  <Link href={item.href}>{item.label}</Link>
+                </motion.div>
+              ))}
+            </motion.nav>
           </div>
 
-          <Link className="site-brand" href="/" aria-label="Nuraya Madinah — Beranda">
-            <span>NURAYA</span>
-            <small>MADINAH</small>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: LUXURY_EASE }}
+          >
+            <Link className="site-brand" href="/" aria-label="Nuraya Madinah — Beranda">
+              <span>NURAYA</span>
+              <small>MADINAH</small>
+            </Link>
+          </motion.div>
 
-          <div className="site-header__actions">
+          <motion.div
+            className="site-header__actions"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.16, ease: LUXURY_EASE }}
+          >
             <Link href="/katalog" className="site-icon-button" aria-label="Cari produk">
               <Search size={19} strokeWidth={1.5} aria-hidden="true" />
             </Link>
             <a className="site-header__contact" href={waLink} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={16} aria-hidden="true" /> Hubungi Kami
             </a>
-          </div>
+          </motion.div>
         </div>
       </header>
 

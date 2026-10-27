@@ -3,11 +3,14 @@
 import { useState, useMemo, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search, SlidersHorizontal, X } from "lucide-react";
+import { motion } from "motion/react";
 import { PRODUCTS } from "@/data/products";
 import { CATEGORIES } from "@/data/categories";
 import { SERVICES } from "@/data/services";
 import ProductCard from "@/components/ui/ProductCard";
 import ServiceCard from "@/components/ui/ServiceCard";
+import { LUXURY_EASE } from "@/lib/motion";
+import { ScrollReveal } from "@/components/motion/reveal";
 
 function CatalogContent() {
   const searchParams = useSearchParams();
@@ -56,16 +59,23 @@ function CatalogContent() {
   return (
     <div className="rz-container py-12 md:py-16">
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-10">
-        <span className="rz-eyebrow">KATALOG LENGKAP</span>
-        <h1 className="rz-h text-3xl md:text-5xl">Koleksi & Layanan Madinah</h1>
-        <p className="rz-p mx-auto mt-3 text-sm md:text-base">
-          Temukan pilihan kuliner favorit, oleh-oleh istimewa, kurma asli Madinah, hingga layanan ziarah dan katering untuk menemani ibadah Anda.
-        </p>
-      </div>
+      <ScrollReveal direction="up" distance={16} duration={0.55} animateOnMount>
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="rz-eyebrow">KATALOG LENGKAP</span>
+          <h1 className="rz-h text-3xl md:text-5xl">Koleksi & Layanan Madinah</h1>
+          <p className="rz-p mx-auto mt-3 text-sm md:text-base">
+            Temukan pilihan kuliner favorit, oleh-oleh istimewa, kurma asli Madinah, hingga layanan ziarah dan katering untuk menemani ibadah Anda.
+          </p>
+        </div>
+      </ScrollReveal>
 
       {/* Search & Category Filter Bar */}
-      <div className="space-y-6 mb-12">
+      <motion.div
+        className="space-y-6 mb-12"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1, ease: LUXURY_EASE }}
+      >
         {/* Search Input */}
         <div className="max-w-md mx-auto relative">
           <input
@@ -119,7 +129,7 @@ function CatalogContent() {
             </button>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Results Count */}
       <div className="flex items-center justify-between pb-4 mb-6 border-b border-[rgba(17,82,53,0.08)] text-[0.75rem] text-[rgba(28,26,23,0.6)]">
@@ -148,11 +158,36 @@ function CatalogContent() {
               Produk Pilihan
             </h2>
           )}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <motion.div
+            key={`products-${selectedCategory}-${searchQuery}`}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.05,
+                },
+              },
+            }}
+          >
             {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <motion.div
+                key={product.id}
+                variants={{
+                  hidden: { opacity: 0, y: 14 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.45, ease: LUXURY_EASE },
+                  },
+                }}
+              >
+                <ProductCard product={product} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       )}
 
@@ -162,17 +197,47 @@ function CatalogContent() {
           <h2 className="font-serif text-2xl text-[#115235] mb-6">
             Layanan Jamaah & City Tour
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            key={`services-${selectedCategory}-${searchQuery}`}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.06,
+                },
+              },
+            }}
+          >
             {filteredServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+              <motion.div
+                key={service.id}
+                variants={{
+                  hidden: { opacity: 0, y: 14 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.45, ease: LUXURY_EASE },
+                  },
+                }}
+              >
+                <ServiceCard service={service} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       )}
 
       {/* Empty State */}
       {filteredProducts.length === 0 && filteredServices.length === 0 && (
-        <div className="text-center py-20 bg-white border border-[rgba(17,82,53,0.1)] p-8">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4, ease: LUXURY_EASE }}
+          className="text-center py-20 bg-white border border-[rgba(17,82,53,0.1)] p-8"
+        >
           <SlidersHorizontal className="w-8 h-8 text-[#AC9878] mx-auto mb-3 stroke-[1.2]" />
           <h3 className="font-serif text-xl text-[#115235]">
             Tidak ada produk yang cocok
@@ -190,7 +255,7 @@ function CatalogContent() {
           >
             Lihat Semua Produk
           </button>
-        </div>
+        </motion.div>
       )}
     </div>
   );

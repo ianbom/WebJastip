@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Jost, Amiri } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import MotionProvider from "@/components/motion/MotionProvider";
 import { SITE_CONFIG } from "@/config/site";
 import "./globals.css";
 
@@ -63,10 +64,12 @@ export default function RootLayout({
       className={`${cormorant.variable} ${jost.variable} ${amiri.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-[#F7F7F7] text-[#1C1A17] antialiased">
-        <Navbar />
-        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
-        <Footer />
-        <FloatingWhatsApp />
+        <MotionProvider>
+          <Navbar />
+          <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
+          <Footer />
+          <FloatingWhatsApp />
+        </MotionProvider>
       </body>
     </html>
   );
