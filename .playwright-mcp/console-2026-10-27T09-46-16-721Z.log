@@ -1,0 +1,4 @@
+[     388ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js:719
+[     473ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1590076212472-ba0d829141f1%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D80&w=384&q=75:0
+[     504ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js:719
+[  178664ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/hmr?id=ZrTycW8VRGyKfxmcBSNvf' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js:16225

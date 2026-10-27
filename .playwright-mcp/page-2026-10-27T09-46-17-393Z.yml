@@ -1,0 +1,253 @@
+- generic [active] [ref=f10e1]:
+  - banner [ref=f10e2]:
+    - generic [ref=f10e4]:
+      - generic [ref=f10e5]:
+        - button "Buka menu navigasi" [ref=f10e6]
+        - link "Cari produk" [ref=f10e8] [cursor=pointer]:
+          - /url: /katalog
+      - navigation [ref=f10e12]:
+        - link "Beranda" [ref=f10e13] [cursor=pointer]:
+          - /url: /
+        - link "Katalog" [ref=f10e14] [cursor=pointer]:
+          - /url: /katalog
+        - link "Makanan" [ref=f10e15] [cursor=pointer]:
+          - /url: /katalog?kategori=makanan
+        - link "Oleh-oleh" [ref=f10e16] [cursor=pointer]:
+          - /url: /katalog?kategori=oleh-oleh
+        - link "Layanan" [ref=f10e17] [cursor=pointer]:
+          - /url: /katalog?kategori=layanan
+        - link "Kemitraan" [ref=f10e18] [cursor=pointer]:
+          - /url: /#kemitraan
+      - link "NURAYAMADINAH" [ref=f10e20] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f10e21]:
+        - link "Cari" [ref=f10e22] [cursor=pointer]:
+          - /url: /katalog
+        - link "Chat WhatsApp WA" [ref=f10e26] [cursor=pointer]:
+          - /url: https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20Nuraya%20Madinah%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20jamaah%20%26%20layanan%20jastip%20selama%20di%20Madinah.%20Terima%20kasih.
+          - generic [ref=f10e29]: Chat WhatsApp
+          - generic [ref=f10e30]: WA
+  - main [ref=f10e31]:
+    - generic [ref=f10e32]:
+      - img "Pelataran Masjid Nabawi Madinah Al-Munawwarah" [ref=f10e33]
+      - generic [ref=f10e34]:
+        - generic [ref=f10e35]: NURAYA MADINAH — PILGRIM ESSENTIALS
+        - heading "Segala Kebutuhan Anda, Lebih Mudah di Madinah." [level=1] [ref=f10e36]
+        - paragraph [ref=f10e37]: Temukan pilihan makanan favorit, oleh-oleh khas Madinah, perlengkapan ibadah, hingga berbagai layanan perjalanan yang memudahkan setiap momen ibadah Anda di Tanah Suci.
+        - generic [ref=f10e38]:
+          - link "Jelajahi Katalog" [ref=f10e39] [cursor=pointer]:
+            - /url: /katalog
+          - link "Konsultasi via WhatsApp" [ref=f10e40] [cursor=pointer]:
+            - /url: https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20Nuraya%20Madinah%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20makanan%20%26%20layanan%20selama%20berada%20di%20Madinah.
+    - generic [ref=f10e45]:
+      - generic [ref=f10e46]:
+        - generic [ref=f10e47]:
+          - generic [ref=f10e48]: EXPLORE OUR COLLECTIONS
+          - heading "Pilihan untuk Setiap Kebutuhan" [level=2] [ref=f10e49]
+        - link "Lihat Semua Kategori" [ref=f10e50] [cursor=pointer]:
+          - /url: /katalog
+      - generic [ref=f10e51]:
+        - link "Makanan & Kuliner المأكولات والمطاعم Makanan & Kuliner Albaik fresh, nasi box nusantara, kunafa keju, dan cemilan khas Tanah Suci." [ref=f10e52] [cursor=pointer]:
+          - /url: /katalog?kategori=makanan
+          - img "Makanan & Kuliner" [ref=f10e53]
+          - generic [ref=f10e54]:
+            - generic [ref=f10e55]: المأكولات والمطاعم
+            - generic [ref=f10e56]: Makanan & Kuliner
+            - generic [ref=f10e57]: Albaik fresh, nasi box nusantara, kunafa keju, dan cemilan khas Tanah Suci.
+        - link "Oleh-oleh Madinah هدايا المدينة Oleh-oleh Madinah Sajadah motif Raudhah, tasbih kokka, siwak asli, dan cinderamata penuh berkah." [ref=f10e58] [cursor=pointer]:
+          - /url: /katalog?kategori=oleh-oleh
+          - img "Oleh-oleh Madinah" [ref=f10e59]
+          - generic [ref=f10e60]:
+            - generic [ref=f10e61]: هدايا المدينة
+            - generic [ref=f10e62]: Oleh-oleh Madinah
+            - generic [ref=f10e63]: Sajadah motif Raudhah, tasbih kokka, siwak asli, dan cinderamata penuh berkah.
+        - link "Kurma & Cokelat التمور والحلويات Kurma & Cokelat Kurma Ajwa Aliya Madinah, Sukari Al-Qassim, dan cokelat kerikil khas Arab." [ref=f10e64] [cursor=pointer]:
+          - /url: /katalog?kategori=kurma
+          - img "Kurma & Cokelat" [ref=f10e65]
+          - generic [ref=f10e66]:
+            - generic [ref=f10e67]: التمور والحلويات
+            - generic [ref=f10e68]: Kurma & Cokelat
+            - generic [ref=f10e69]: Kurma Ajwa Aliya Madinah, Sukari Al-Qassim, dan cokelat kerikil khas Arab.
+        - link "Parfum & Bukhur العطور والبخور Parfum & Bukhur Aroma kasturi Nabawi, bukhur oud gaharu, dan wewangian non-alkohol tahan lama." [ref=f10e70] [cursor=pointer]:
+          - /url: /katalog?kategori=parfum
+          - img "Parfum & Bukhur" [ref=f10e71]
+          - generic [ref=f10e72]:
+            - generic [ref=f10e73]: العطور والبخور
+            - generic [ref=f10e74]: Parfum & Bukhur
+            - generic [ref=f10e75]: Aroma kasturi Nabawi, bukhur oud gaharu, dan wewangian non-alkohol tahan lama.
+      - link "Lihat Semua Kategori" [ref=f10e77] [cursor=pointer]:
+        - /url: /katalog
+    - generic [ref=f10e79]:
+      - generic [ref=f10e80]:
+        - generic [ref=f10e81]:
+          - generic [ref=f10e82]: CURATED FAVORITES
+          - heading "Favorit Jamaah di Madinah" [level=2] [ref=f10e83]
+        - link "Lihat Semua Produk" [ref=f10e84] [cursor=pointer]:
+          - /url: /katalog
+      - generic [ref=f10e85]:
+        - link "Jastip Albaik — Paket Ayam 4 Pcs JASTIP FAVORIT Jastip Albaik — Paket Ayam 4 Pcs 26.00 SAR30.00 SAR~Rp 114.400" [ref=f10e86] [cursor=pointer]:
+          - /url: /produk/jastip-albaik-paket-ayam
+          - img "Jastip Albaik — Paket Ayam 4 Pcs" [ref=f10e88]
+          - generic [ref=f10e89]: JASTIP FAVORIT
+          - heading "Jastip Albaik — Paket Ayam 4 Pcs" [level=3] [ref=f10e90]
+          - generic [ref=f10e91]:
+            - text: 26.00 SAR30.00 SAR
+            - generic [ref=f10e92]: ~Rp 114.400
+        - link "Kunafa Keju Madinah Pistachio DESSERT AUTENTIK Kunafa Keju Madinah Pistachio 35.00 SAR42.00 SAR~Rp 154.000" [ref=f10e93] [cursor=pointer]:
+          - /url: /produk/kunafa-keju-madinah-premium
+          - img "Kunafa Keju Madinah Pistachio" [ref=f10e95]
+          - generic [ref=f10e96]: DESSERT AUTENTIK
+          - heading "Kunafa Keju Madinah Pistachio" [level=3] [ref=f10e97]
+          - generic [ref=f10e98]:
+            - text: 35.00 SAR42.00 SAR
+            - generic [ref=f10e99]: ~Rp 154.000
+        - link "Kurma Ajwa Aliya Madinah VIP (1 Kg) KUALITAS TERBAIK Kurma Ajwa Aliya Madinah VIP (1 Kg) 70.00 SAR85.00 SAR~Rp 308.000" [ref=f10e100] [cursor=pointer]:
+          - /url: /produk/kurma-ajwa-madinah-vip
+          - img "Kurma Ajwa Aliya Madinah VIP (1 Kg)" [ref=f10e102]
+          - generic [ref=f10e103]: KUALITAS TERBAIK
+          - heading "Kurma Ajwa Aliya Madinah VIP (1 Kg)" [level=3] [ref=f10e104]
+          - generic [ref=f10e105]:
+            - text: 70.00 SAR85.00 SAR
+            - generic [ref=f10e106]: ~Rp 308.000
+        - link "Sajadah Motif Raudhah Tebal 8mm EKSKLUSIF NABAWI Sajadah Motif Raudhah Tebal 8mm 80.00 SAR95.00 SAR~Rp 352.000" [ref=f10e107] [cursor=pointer]:
+          - /url: /produk/sajadah-motif-raudhah-lux
+          - img "Sajadah Motif Raudhah Tebal 8mm" [ref=f10e109]
+          - generic [ref=f10e110]: EKSKLUSIF NABAWI
+          - heading "Sajadah Motif Raudhah Tebal 8mm" [level=3] [ref=f10e111]
+          - generic [ref=f10e112]:
+            - text: 80.00 SAR95.00 SAR
+            - generic [ref=f10e113]: ~Rp 352.000
+      - link "Lihat Semua Produk" [ref=f10e115] [cursor=pointer]:
+        - /url: /katalog
+    - generic [ref=f10e118]:
+      - img "Suasana tenang dan damai di Kota Suci Madinah" [ref=f10e120]
+      - generic [ref=f10e121]:
+        - generic [ref=f10e122]: MADE FOR YOUR JOURNEY
+        - heading "Lebih Dekat dengan Kenyamanan di Tanah Suci." [level=2] [ref=f10e123]
+        - generic [ref=f10e124]:
+          - paragraph [ref=f10e125]: Setiap perjalanan ibadah memiliki kebutuhan yang berbeda. Kami hadir untuk memastikan hari-hari Anda di Madinah Al-Munawwarah dipenuhi ketenangan, kemudahan, dan keberkahan.
+          - paragraph [ref=f10e126]: Dari antaran ayam Albaik hangat ke lobi hotel, kurma Ajwa asli kebun Madinah yang terjamin mutunya, hingga armada ziarah privat bersama muthawif berpengalaman — Nuraya Madinah siap melayani Anda layaknya sahabat terpercaya di Tanah Suci.
+        - link "Kenali Layanan Kami" [ref=f10e128] [cursor=pointer]:
+          - /url: /katalog?kategori=layanan
+    - generic [ref=f10e130]:
+      - generic [ref=f10e131]:
+        - generic [ref=f10e132]:
+          - generic [ref=f10e133]: PILGRIM SERVICES
+          - heading "Layanan untuk Perjalanan yang Lebih Nyaman" [level=2] [ref=f10e134]
+        - link "Lihat Semua Layanan" [ref=f10e135] [cursor=pointer]:
+          - /url: /katalog?kategori=layanan
+      - generic [ref=f10e136]:
+        - link "City Tour & Ziarah Bersejarah Madinah NAPAK TILAS SIRAH City Tour & Ziarah Bersejarah Madinah Kunjungan eksklusif Jabal Uhud, Masjid Quba, Masjid Qiblatain, dan Percetakan Al-Qur'an. Mulai 150 SAR / Mobil" [ref=f10e137] [cursor=pointer]:
+          - /url: /layanan/city-tour-ziarah-madinah
+          - img "City Tour & Ziarah Bersejarah Madinah" [ref=f10e139]
+          - generic [ref=f10e140]: NAPAK TILAS SIRAH
+          - heading "City Tour & Ziarah Bersejarah Madinah" [level=3] [ref=f10e141]
+          - paragraph [ref=f10e142]: Kunjungan eksklusif Jabal Uhud, Masjid Quba, Masjid Qiblatain, dan Percetakan Al-Qur'an.
+          - generic [ref=f10e143]: Mulai 150 SAR / Mobil
+        - link "Katering & Nasi Box Masakan Nusantara SELERA INDONESIA Katering & Nasi Box Masakan Nusantara Pilihan menu masakan Indonesia hangat diantar tepat waktu ke kamar hotel jamaah. Mulai 25 SAR / Porsi" [ref=f10e144] [cursor=pointer]:
+          - /url: /layanan/nasi-box-jamaah-nusantara
+          - img "Katering & Nasi Box Masakan Nusantara" [ref=f10e146]
+          - generic [ref=f10e147]: SELERA INDONESIA
+          - heading "Katering & Nasi Box Masakan Nusantara" [level=3] [ref=f10e148]
+          - paragraph [ref=f10e149]: Pilihan menu masakan Indonesia hangat diantar tepat waktu ke kamar hotel jamaah.
+          - generic [ref=f10e150]: Mulai 25 SAR / Porsi
+        - link "Catering Prasmanan Rombongan Travel KHUSUS GRUP & TRAVEL Catering Prasmanan Rombongan Travel Layanan penyediaan konsumsi skala besar untuk biro travel umrah, haji plus, dan ziarah. Tanya Harga / Kontak Admin" [ref=f10e151] [cursor=pointer]:
+          - /url: /layanan/catering-rombongan-umrah-haji
+          - img "Catering Prasmanan Rombongan Travel" [ref=f10e153]
+          - generic [ref=f10e154]: KHUSUS GRUP & TRAVEL
+          - heading "Catering Prasmanan Rombongan Travel" [level=3] [ref=f10e155]
+          - paragraph [ref=f10e156]: Layanan penyediaan konsumsi skala besar untuk biro travel umrah, haji plus, dan ziarah.
+          - generic [ref=f10e157]: Tanya Harga / Kontak Admin
+        - link "Jastip Belanja & Ekspedisi Kargo ke Indonesia BEBAS REPOT BAGASI Jastip Belanja & Ekspedisi Kargo ke Indonesia Beli oleh-oleh dan kurma tanpa khawatir kelebihan muatan bagasi pesawat saat kepulangan. Mulai 35 SAR / Kg" [ref=f10e158] [cursor=pointer]:
+          - /url: /layanan/jastip-titip-kirim-kargo-indonesia
+          - img "Jastip Belanja & Ekspedisi Kargo ke Indonesia" [ref=f10e160]
+          - generic [ref=f10e161]: BEBAS REPOT BAGASI
+          - heading "Jastip Belanja & Ekspedisi Kargo ke Indonesia" [level=3] [ref=f10e162]
+          - paragraph [ref=f10e163]: Beli oleh-oleh dan kurma tanpa khawatir kelebihan muatan bagasi pesawat saat kepulangan.
+          - generic [ref=f10e164]: Mulai 35 SAR / Kg
+      - link "Lihat Semua Layanan" [ref=f10e166] [cursor=pointer]:
+        - /url: /katalog?kategori=layanan
+    - generic [ref=f10e169]:
+      - generic [ref=f10e170]:
+        - heading "Praktis & Mudah" [level=3] [ref=f10e175]
+        - paragraph [ref=f10e176]: Temukan segala kebutuhan jamaah tanpa harus menghabiskan waktu mencari ke banyak tempat di sekitar hotel.
+      - generic [ref=f10e177]:
+        - heading "Pilihan Lengkap" [level=3] [ref=f10e183]
+        - paragraph [ref=f10e184]: Dari kuliner legendaris Albaik, kurma pilihan, oleh-oleh raudhah, hingga transportasi ziarah siap sedia.
+      - generic [ref=f10e185]:
+        - heading "Pemesanan via WhatsApp" [level=3] [ref=f10e189]
+        - paragraph [ref=f10e190]: Konsultasi ramah dan pemesanan praktis langsung via WhatsApp dengan admin berpengalaman.
+      - generic [ref=f10e191]:
+        - heading "Dukungan Rombongan" [level=3] [ref=f10e198]
+        - paragraph [ref=f10e199]: Melayani kebutuhan jamaah mandiri, keluarga, maupun pesanan skala besar bagi travel dan muthawif.
+    - generic [ref=f10e202]:
+      - generic [ref=f10e209]: PARTNERSHIP & COLLABORATION
+      - heading "Tumbuh Bersama, Melayani Lebih Banyak Jamaah." [level=2] [ref=f10e210]
+      - paragraph [ref=f10e211]: Kami membuka peluang kerja sama bagi muthawif, tour leader, biro travel umrah & haji, serta koordinator rombongan yang ingin menghadirkan kemudahan katering nusantara, pengadaan oleh-oleh, hingga city tour privat berfasilitas prima di Madinah.
+      - link "Diskusikan Kerja Sama" [ref=f10e213] [cursor=pointer]:
+        - /url: https://wa.me/6281234567890?text=Assalamu'alaikum%20Tim%20Nuraya%20Madinah%2C%20saya%20tertarik%20menjalin%20kerja%20sama%20kemitraan%3A%0A%0A%E2%80%A2%20*Minat%20Kemitraan%3A*%20Muthawif%20%2F%20Tour%20Leader%20%2F%20Travel%20Umrah%20%26%20Haji%0A%E2%80%A2%20*Kategori%3A*%20Biro%20Travel%20Umrah%20%2F%20Muthawif%20%2F%20Tour%20Leader%0A%0AMohon%20informasi%20peluang%20sinergi%20dan%20skema%20kerja%20sama%20untuk%20jamaah%20di%20Madinah.%20Terima%20kasih.
+    - generic [ref=f10e215]:
+      - generic [ref=f10e216]: ◆
+      - heading "Madinah, Lebih Mudah Bersama Nuraya." [level=2] [ref=f10e217]
+      - paragraph [ref=f10e218]: Jelajahi produk pilihan dan layanan praktis yang siap menemani setiap momen ibadah Anda selama berada di Tanah Suci.
+      - generic [ref=f10e219]:
+        - link "Lihat Semua Produk" [ref=f10e220] [cursor=pointer]:
+          - /url: /katalog
+        - link "Hubungi via WhatsApp" [ref=f10e221] [cursor=pointer]:
+          - /url: https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20Nuraya%20Madinah%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20jamaah%20%26%20layanan%20jastip%20selama%20di%20Madinah.%20Terima%20kasih.
+  - contentinfo [ref=f10e225]:
+    - generic [ref=f10e226]:
+      - generic [ref=f10e227]:
+        - generic [ref=f10e228]:
+          - text: NURAYA MADINAHYour Trusted Madinah Companion
+          - paragraph [ref=f10e229]: Layanan kurasi jastip, kuliner siap saji, kurma pilihan, oleh-oleh eksklusif, serta pendampingan perjalanan ibadah bagi jamaah Umrah & Haji Indonesia di Kota Suci Madinah.
+          - generic [ref=f10e230]: Amanah · Cepat · Diantar ke Hotel
+        - generic [ref=f10e234]:
+          - heading "Jelajahi" [level=4] [ref=f10e235]
+          - list [ref=f10e236]:
+            - listitem [ref=f10e237]:
+              - link "Semua Produk" [ref=f10e238] [cursor=pointer]:
+                - /url: /katalog
+            - listitem [ref=f10e239]:
+              - link "Makanan & Jastip Albaik" [ref=f10e240] [cursor=pointer]:
+                - /url: /katalog?kategori=makanan
+            - listitem [ref=f10e241]:
+              - link "Oleh-oleh & Sajadah" [ref=f10e242] [cursor=pointer]:
+                - /url: /katalog?kategori=oleh-oleh
+            - listitem [ref=f10e243]:
+              - link "Kurma Ajwa & Sukari" [ref=f10e244] [cursor=pointer]:
+                - /url: /katalog?kategori=kurma
+            - listitem [ref=f10e245]:
+              - link "Parfum & Bukhur Nabawi" [ref=f10e246] [cursor=pointer]:
+                - /url: /katalog?kategori=parfum
+        - generic [ref=f10e247]:
+          - heading "Layanan" [level=4] [ref=f10e248]
+          - list [ref=f10e249]:
+            - listitem [ref=f10e250]:
+              - link "City Tour & Ziarah" [ref=f10e251] [cursor=pointer]:
+                - /url: /layanan/city-tour-ziarah-madinah
+            - listitem [ref=f10e252]:
+              - link "Katering & Nasi Box" [ref=f10e253] [cursor=pointer]:
+                - /url: /layanan/nasi-box-jamaah-nusantara
+            - listitem [ref=f10e254]:
+              - link "Kirim Kargo ke Indonesia" [ref=f10e255] [cursor=pointer]:
+                - /url: /layanan/jastip-titip-kirim-kargo-indonesia
+            - listitem [ref=f10e256]:
+              - link "Kemitraan Tour Leader & Muthawif" [ref=f10e257] [cursor=pointer]:
+                - /url: /#kemitraan
+        - generic [ref=f10e258]:
+          - heading "Pemesanan Cepat" [level=4] [ref=f10e259]
+          - paragraph [ref=f10e260]: Semua pemesanan produk dan booking layanan ditangani langsung oleh tim kami via WhatsApp.
+          - generic [ref=f10e261]:
+            - link "Pesan via WhatsApp" [ref=f10e262] [cursor=pointer]:
+              - /url: https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20Nuraya%20Madinah%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20jamaah%20%26%20layanan%20jastip%20selama%20di%20Madinah.%20Terima%20kasih.
+            - link "Info Kerja Sama" [ref=f10e265] [cursor=pointer]:
+              - /url: https://wa.me/6281234567890?text=Assalamu'alaikum%20Tim%20Nuraya%20Madinah%2C%20saya%20tertarik%20menjalin%20kerja%20sama%20kemitraan%3A%0A%0A%E2%80%A2%20*Minat%20Kemitraan%3A*%20Muthawif%20%2F%20Tour%20Leader%20%2F%20Travel%20Umrah%20%26%20Haji%0A%0AMohon%20informasi%20peluang%20sinergi%20dan%20skema%20kerja%20sama%20untuk%20jamaah%20di%20Madinah.%20Terima%20kasih.
+      - generic [ref=f10e266]:
+        - paragraph [ref=f10e267]: © 2026 NURAYA MADINAH. All rights reserved.
+        - generic [ref=f10e268]: Melayani Jamaah Tanah Suci dengan Penuh Kehangatan
+  - complementary "Kontak WhatsApp" [ref=f10e271]:
+    - generic [ref=f10e272]: Chat Admin Madinah
+    - link "Hubungi Admin Nuraya Madinah via WhatsApp" [ref=f10e273] [cursor=pointer]:
+      - /url: https://wa.me/6281234567890?text=Assalamu'alaikum%20Admin%20Nuraya%20Madinah%2C%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20jamaah%20%26%20layanan%20jastip%20selama%20di%20Madinah.%20Terima%20kasih.
+  - button "Open Next.js Dev Tools" [ref=f10e281] [cursor=pointer]

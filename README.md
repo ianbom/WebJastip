@@ -16,6 +16,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Layout Regression Check
+
+With the development server running and Browser Harness connected, run in PowerShell:
+
+```powershell
+Get-Content scripts/check-layout.py -Raw | browser-harness
+```
+
+Set `$env:QA_ORIGIN` to test a different local server. The check covers six viewport
+widths, mobile menu keyboard/focus behavior, catalog navigation, internal routes,
+WhatsApp link structure (without sending messages), and reduced motion.
+
+Styling uses the installed Tailwind CSS Turbopack loader for both `npm run dev`
+and `npm run build`. No additional styling dependency is required.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
