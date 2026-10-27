@@ -5,6 +5,7 @@
   --font-sans: var(--font-jost), sans-serif;
 }
 
+@layer components {
 :root {
   --ramz-bg: #F7F7F7;
   --ramz-ink: #1C1A17;
@@ -39,11 +40,6 @@ body {
 
 html {
   scroll-padding-top: 100px;
-}
-
-:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 5px;
 }
 
 main:focus {
@@ -776,4 +772,10 @@ main:focus {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
 }

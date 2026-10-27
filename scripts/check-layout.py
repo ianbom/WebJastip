@@ -25,6 +25,7 @@ for width in (360, 390, 768, 1024, 1280, 1440):
         footerColumns: getComputedStyle(document.querySelector('.rz-foot__g')).gridTemplateColumns.split(' ').length,
         menuVisible: visible('[aria-label="Buka menu navigasi"]'),
         desktopVisible: visible('[aria-label="Navigasi utama"]'),
+        sectionLinksVisible: Array.from(document.querySelectorAll('.rz-head .rz-link')).every(link=>link.getBoundingClientRect().width > 0),
         navRight: document.querySelector('[aria-label="Navigasi utama"]').getBoundingClientRect().right,
         brandLeft: document.querySelector('header .site-brand').getBoundingClientRect().left,
         titleBottom: document.querySelector('.rz-hero h1').getBoundingClientRect().bottom,
@@ -36,6 +37,7 @@ for width in (360, 390, 768, 1024, 1280, 1440):
     assert result["footerColumns"] == (4 if width >= 1280 else 2 if width >= 768 else 1), (width, "footer grid", result)
     assert result["menuVisible"] == (width < 1280), (width, "menu breakpoint")
     assert result["desktopVisible"] == (width >= 1280), (width, "desktop breakpoint")
+    assert result["sectionLinksVisible"] == (width >= 640), (width, "duplicate section links")
     assert result["titleBottom"] <= result["heroBottom"], (width, "clipped hero title")
     if width >= 1280:
         assert result["navRight"] < result["brandLeft"], (width, "navbar overlaps brand")
